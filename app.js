@@ -4,7 +4,7 @@ function display(format, contents) {
   colors = getColors(format, contents);
   if (colors && colors.length > 0) {
     $("#file-input").remove();
-    $("#waifu").append(hori);
+    $("#waifu-container").append(hori);
 
     background = colors[17];
     foreground = colors[16];
