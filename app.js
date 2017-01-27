@@ -8,8 +8,8 @@ function display(format, contents) {
     console.log(colors);
     for (var i = 0; i < colors.length; i++) {
       color = colors[i];
-      id = "._" + i;
-      $(id).css({"fill": color});
+      region = ".st" + i;
+      $(region).css({"fill": color});
     }
   } else {
     $("#error").fadeIn(300);
