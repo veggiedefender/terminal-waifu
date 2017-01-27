@@ -27,12 +27,39 @@ contents_id.on("input", function(e) {
   $("#format").val(format);
 });
 
+contents_id.on("dragover", function(event) {
+    event.preventDefault();  
+    event.stopPropagation();
+    contents_id.addClass("dragging");
+});
+contents_id.on("dragleave", function(event) {
+    event.preventDefault();  
+    event.stopPropagation();
+    contents_id.removeClass("dragging");
+});
+contents_id.on("drop", function(event) {
+    event.preventDefault();  
+    event.stopPropagation();
+    file = event.originalEvent.dataTransfer.files[0];
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      var contents = e.target.result;
+      contents_id.val(contents);
+      contents_id.removeClass("dragging")
+      contents_id.trigger("input");
+    }
+    reader.readAsText(file);    
+});
+
+
 String.prototype.contains = function(v) {
   return this.indexOf(v) != -1;
 }
 function autodetect(contents) {
   //incredibly naive format autodetection
   if (contents.contains("<data>")) {
+    //runs before iterm because both
+    //use xml but this uses <data> tag
     return "terminalapp";
   }
   if (contents.contains("<key>")) {

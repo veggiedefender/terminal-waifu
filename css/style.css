@@ -41,6 +41,9 @@ h1 {
 .button:hover {
   background-color: #68ff9a;
 }
+.dragging {
+  outline: 4px dashed #9aedfe;
+}
 
 #error {
   background-color: #ff5c57;
