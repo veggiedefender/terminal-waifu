@@ -11,6 +11,7 @@ textarea {
     height: 50vh;
     width: 50vw;
     font-family: inherit;
+    resize: none;
 }
 textarea:focus {
     border: 1px solid #eff0eb;
