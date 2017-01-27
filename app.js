@@ -5,6 +5,7 @@ function display(format, contents) {
   if (colors && colors.length > 0) {
     $("#file-input").remove();
     $("#waifu").append(hori);
+    console.log(colors);
     for (var i = 0; i < colors.length; i++) {
       color = colors[i];
       id = "._" + i;
@@ -28,9 +29,11 @@ contents_id.on("input", function(e) {
 });
 
 contents_id.on("dragover", function(event) {
-    event.preventDefault();  
-    event.stopPropagation();
-    contents_id.addClass("dragging");
+  if (event.originalEvent.types.indexOf('Files') != -1) {
+      event.preventDefault();  
+      event.stopPropagation();
+      contents_id.addClass("dragging");
+  }
 });
 contents_id.on("dragleave", function(event) {
     event.preventDefault();  
