@@ -9,19 +9,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <h1>waifu config</h1>
-    <form>
-      <textarea spellcheck="false"></textarea>
-      <br>
-      <select>
-        <option value="iterm">iTerm</option>
-        <option value="json">json</option>
-        <option value="terminalapp">Terminal.app</option>
-        <option value="termite">Termite</option>
-        <option value="xresources">.Xresources</option>
-      </select>
-      <a class="button" href="#">waifu</a>
-    </form>
+    <div id="file-input">
+      <h1>waifu config</h1>
+      <form>
+        <textarea id="contents" spellcheck="false"></textarea>
+        <br>
+        <select id="format">
+          <option value="iterm">iTerm</option>
+          <option value="json">json</option>
+          <option value="terminalapp">Terminal.app</option>
+          <option value="termite">Termite</option>
+          <option value="xresources">.Xresources</option>
+        </select>
+        <a class="button" href="#" id="submit">waifu</a>
+      </form>
+    </div>
     <script type="text/javascript" src="bundle.js"></script>
     <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
