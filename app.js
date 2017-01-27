@@ -1,3 +1,5 @@
+contents_id = $("#contents");
+
 function display(format, contents) {
   colors = getColors(format, contents);
   if (colors && colors.length > 0) {
@@ -9,15 +11,41 @@ function display(format, contents) {
       $(id).css({"fill": color});
     }
   } else {
-    console.log("couldn't read");
+    $("#error").fadeIn(300);
   }
 }
 
 $("#submit").click(function(event) {
   format = $("#format").val();
-  contents = $("#contents").val();
+  contents = contents_id.val();
   display(format, contents);
 });
+
+contents_id.on("input", function(e) {
+  contents = contents_id.val();
+  format = autodetect(contents);
+  $("#format").val(format);
+});
+
+function autodetect(contents) {
+  //incredibly naive format autodetection
+  if (contents.indexOf("<data>") != -1) {
+    return "terminalapp";
+  }
+  if (contents.indexOf("<key>") != -1) {
+    return "iterm";
+  }
+  if (contents.indexOf("{") != -1) {
+    return "json";
+  }
+  if (contents.indexOf("[colors]") != -1) {
+    return "termite";
+  }
+  if (contents.indexOf("!") != -1) {
+    return "xresources"
+  }
+  return "iterm";
+}
 
 waifu = `<svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"

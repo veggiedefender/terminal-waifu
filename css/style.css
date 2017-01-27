@@ -1,53 +1,60 @@
 body {
-    font-family: 'Inconsolata', monospace;
-    color: #eff0eb;
-    background-color: #282a36;
-    margin-left: 2vw;
-    margin-right: 2vw;
+  font-family: 'Inconsolata', monospace;
+  color: #eff0eb;
+  background-color: #282a36;
+  margin-left: 2vw;
+  margin-right: 2vw;
 }
 
 textarea {
-    background-color: #282a2e;
-    border: 1px solid #373b41;
-    height: 50vh;
-    width: 96vw;
-    font-family: inherit;
-    resize: none;
+  background-color: #282a2e;
+  border: 1px solid #373b41;
+  height: 50vh;
+  width: 96vw;
+  font-family: inherit;
+  resize: none;
 }
 textarea:focus {
-    border: 1px solid #eff0eb;
-}
-select {
-    background-color: #282a2e;
-    border: 1px solid #373b41;
-    font-family: inherit;
+  border: 1px solid #eff0eb;
 }
 
+select {
+  background-color: #282a2e;
+  border: 1px solid #373b41;
+  font-family: inherit;
+  margin-bottom: 0;
+}
 select:focus {
-    border: 1px solid #eff0eb;
+  border: 1px solid #eff0eb;
 }
+
 h1 {
-    margin-top: 1em;
+  margin-top: 1em;
 }
+
 .button {
-    border: none;
-    color: #282a2e;
-    background-color: #5af78e;
+  border: none;
+  color: #282a2e;
+  background-color: #5af78e;
+  margin-bottom: 0;
 }
 .button:hover {
-    background-color: #68ff9a;
+  background-color: #68ff9a;
 }
 
-#one {
-    background-color: red;
+#error {
+  background-color: #ff5c57;
+  padding-left: 1ch;
+  border-radius: 0.5ch;
+  display: none;
 }
 
 @media screen and (min-width: 1000px) {
-    body {
-        margin-left: 25vw;
-        margin-right: 25vw;
-    }
-    textarea {
-        width: 50vw;
-    }
+  body {
+    margin-left: 25vw;
+    margin-right: 25vw;
+  }
+  textarea {
+    width: 50vw;
+  }
 }
