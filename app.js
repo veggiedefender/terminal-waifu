@@ -27,21 +27,24 @@ contents_id.on("input", function(e) {
   $("#format").val(format);
 });
 
+String.prototype.contains = function(v) {
+  return this.indexOf(v) != -1;
+}
 function autodetect(contents) {
   //incredibly naive format autodetection
-  if (contents.indexOf("<data>") != -1) {
+  if (contents.contains("<data>")) {
     return "terminalapp";
   }
-  if (contents.indexOf("<key>") != -1) {
+  if (contents.contains("<key>")) {
     return "iterm";
   }
-  if (contents.indexOf("{") != -1) {
+  if (contents.contains("{")) {
     return "json";
   }
-  if (contents.indexOf("[colors]") != -1) {
+  if (contents.contains("[colors]")) {
     return "termite";
   }
-  if (contents.indexOf("!") != -1) {
+  if (contents.contains("!")) {
     return "xresources"
   }
   return "iterm";
