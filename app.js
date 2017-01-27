@@ -10,12 +10,12 @@ function display(format, contents) {
     foreground = colors[16];
     $("body").css("background-color", background);
 
-    $(".bubble").css("fill", foreground);
     for (var i = 0; i <= 15; i++) {
       color = colors[i];
       region = ".st" + i;
       $(region).css("fill", color);
     }
+    $(".words").css("fill", foreground);
   } else {
     $("#error").fadeIn(300);
   }
