@@ -5,11 +5,16 @@ function display(format, contents) {
   if (colors && colors.length > 0) {
     $("#file-input").remove();
     $("#waifu").append(hori);
-    console.log(colors);
-    for (var i = 0; i < colors.length; i++) {
+
+    background = colors[17];
+    foreground = colors[16];
+    $("body").css("background-color", background);
+
+    $(".bubble").css("fill", foreground);
+    for (var i = 0; i <= 15; i++) {
       color = colors[i];
       region = ".st" + i;
-      $(region).css({"fill": color});
+      $(region).css("fill", color);
     }
   } else {
     $("#error").fadeIn(300);
