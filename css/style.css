@@ -38,3 +38,7 @@ h1 {
 .button:hover {
     background-color: #68ff9a;
 }
+
+#one {
+    background-color: red;
+}
