@@ -84,3 +84,6 @@ function autodetect(contents) {
   }
   return "iterm";
 }
+$("document").ready(function() {
+  contents_id.trigger("input");
+})
