@@ -2,14 +2,15 @@ body {
     font-family: 'Inconsolata', monospace;
     color: #eff0eb;
     background-color: #282a36;
+    margin-left: 2vw;
+    margin-right: 2vw;
 }
+
 textarea {
     background-color: #282a2e;
     border: 1px solid #373b41;
-    margin-left: 25vw;
-    margin-right: 25vw;
     height: 50vh;
-    width: 50vw;
+    width: 96vw;
     font-family: inherit;
     resize: none;
 }
@@ -19,7 +20,6 @@ textarea:focus {
 select {
     background-color: #282a2e;
     border: 1px solid #373b41;
-    margin-left: 25vw;
     font-family: inherit;
 }
 
@@ -28,7 +28,6 @@ select:focus {
 }
 h1 {
     margin-top: 1em;
-    margin-left: 25vw;
 }
 .button {
     border: none;
@@ -41,4 +40,14 @@ h1 {
 
 #one {
     background-color: red;
+}
+
+@media screen and (min-width: 1000px) {
+    body {
+        margin-left: 25vw;
+        margin-right: 25vw;
+    }
+    textarea {
+        width: 50vw;
+    }
 }
