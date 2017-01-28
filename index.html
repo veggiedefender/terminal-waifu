@@ -9,11 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <div id="file-input">
+    <div class="container">
       <h1>waifu config</h1>
       <form>
-        <textarea id="contents" spellcheck="false" autofocus placeholder="paste config or drag and drop file">
-! special
+        <textarea class="u-full-width"
+          id="contents"
+          spellcheck="false"
+          autofocus
+          placeholder="paste config or drag and drop file">! special
 *.foreground:   #f0f0f0
 *.background:   #232c33
 *.cursorColor:  #f0f0f0
@@ -49,9 +52,7 @@
 ! white
 *.color7:       #f0f0f0
 *.color15:      #f0f0f0
-
-        </textarea>
-        <br>
+</textarea>
         <select id="format">
           <option value="iterm">iTerm</option>
           <option value="json">json</option>
@@ -59,21 +60,18 @@
           <option value="termite">Termite</option>
           <option value="xresources">.Xresources</option>
         </select>
-        <a class="button" href="#" id="submit">waifu</a>
+        <a class="button" id="reset" href="#">reset</a>
+        <a class="button button-primary" id="submit" href="#">waifu</a>
       </form>
       <p id="error">error reading file</p>
     </div>
-    <div id="waifu-container">      
-    </div>
-
+    <div id="waifu-container"></div>
     <div class="footer">
       <p class="footer-text">made by <a href="http://jli.host/">Jesse Li</a> | <a href="https://github.com/veggiedefender/terminal-waifu">source</a></p>
     </div>
-    <!-- <a href="https://github.com/veggiedefender/terminal-waifu"><img id="logo" src="GitHub_Logo.png"></a> -->
-
-    <script type="text/javascript" src="bundle.js"></script>
-    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="js/bundle.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="waifus/waifus.js"></script>
-    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
   </body>
 </html>

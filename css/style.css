@@ -1,21 +1,27 @@
 body {
-  margin-bottom: 0;
   font-family: 'Inconsolata', monospace;
   color: #eff0eb;
   background-color: #282a36;
-  margin-left: 2vw;
-  margin-right: 2vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1;
+}
+
+h1 {
+  margin-top: 1em;
 }
 
 textarea {
   background-color: #282a2e;
   border: 1px solid #373b41;
-  height: 60vh;
-  width: 96vw;
+  height: 50vh;
   font-family: inherit;
   resize: none;
-}
-textarea:focus {
+} textarea:focus {
   border: 1px solid #eff0eb;
 }
 
@@ -24,59 +30,47 @@ select {
   border: 1px solid #373b41;
   font-family: inherit;
   margin-bottom: 0;
-}
-select:focus {
+} select:focus {
   border: 1px solid #eff0eb;
 }
 
-h1 {
-  margin-top: 1em;
-}
-
-.button {
-  border: none;
+#submit {
+  border-color: #5af78e;
   color: #282a2e;
   background-color: #5af78e;
   margin-bottom: 0;
-}
-.button:hover {
+} #submit:hover {
   background-color: #68ff9a;
 }
-.dragging {
-  outline: 4px dashed #9aedfe;
+
+#reset {
+  color: #eff0eb;
+  margin-bottom: 0;
 }
 
 #error {
   background-color: #ff5c57;
   padding-left: 1ch;
-  border-radius: 0.5ch;
+  border-radius: 3px;
   display: none;
 }
+
 #waifu-container {
   display: none;
 }
 
 .footer {
-  line-height: 0.1em;
-  text-align: right;
   background-color: #1e1f2a;
-  width: 100vw;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-}
-.footer-text {
+  line-height: 2em;
+  text-align: right;
+  color: #eff0eb;
   padding-right: 1ch;
+} .footer p {
+  margin: 0;
+} .footer p a {
+  color: #eff0eb;
 }
-.footer-text a {
-  color: white;
-}
-@media screen and (min-width: 1300px) {
-  body {
-    margin-left: 25vw;
-    margin-right: 25vw;
-  }
-  textarea {
-    width: 50vw;
-  }
+
+.dragging {
+  outline: 4px dashed #9aedfe;
 }

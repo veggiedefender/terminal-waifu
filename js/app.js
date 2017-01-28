@@ -1,5 +1,6 @@
 contents_id = $("#contents");
 
+//load format/contents if saved
 contents = localStorage.getItem("contents");
 if (contents != null) {
   console.log("loaded contents from localStorage");
@@ -41,6 +42,10 @@ $("#submit").click(function(event) {
   contents = contents_id.val();
   display(format, contents);
 });
+$("#reset").click(function(event) {
+  localStorage.clear();
+  window.location.reload();
+});
 
 contents_id.on("input", function(e) {
   contents = contents_id.val();
@@ -49,10 +54,12 @@ contents_id.on("input", function(e) {
 });
 
 contents_id.on("dragover", function(event) {
-  if (event.originalEvent.types.indexOf('Files') != -1) {
-      event.preventDefault();  
-      event.stopPropagation();
-      contents_id.addClass("dragging");
+  dt = event.originalEvent.dataTransfer;
+  //check if dragged item is a file
+  if (dt.types && (dt.types.indexOf ? dt.types.indexOf('Files') != -1 : dt.types.contains('Files'))) {
+    event.preventDefault();
+    event.stopPropagation();
+    contents_id.addClass("dragging");
   }
 });
 contents_id.on("dragleave", function(event) {
@@ -64,11 +71,12 @@ contents_id.on("drop", function(event) {
     event.preventDefault();  
     event.stopPropagation();
     file = event.originalEvent.dataTransfer.files[0];
+
     var reader = new FileReader();
     reader.onload = function(e) {
       var contents = e.target.result;
       contents_id.val(contents);
-      contents_id.removeClass("dragging")
+      contents_id.removeClass("dragging");
       contents_id.trigger("input");
     }
     reader.readAsText(file);    
@@ -95,7 +103,7 @@ function autodetect(contents) {
     return "termite";
   }
   if (contents.contains("!")) {
-    return "xresources"
+    return "xresources";
   }
   return "iterm";
 }
