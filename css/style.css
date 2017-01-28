@@ -10,7 +10,7 @@ body {
 textarea {
   background-color: #282a2e;
   border: 1px solid #373b41;
-  height: 50vh;
+  height: 60vh;
   width: 96vw;
   font-family: inherit;
   resize: none;
@@ -76,7 +76,7 @@ h1 {
 .footer-text a {
   color: white;
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1300px) {
   body {
     margin-left: 25vw;
     margin-right: 25vw;
