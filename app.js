@@ -3,12 +3,11 @@ contents_id = $("#contents");
 function display(format, contents) {
   colors = getColors(format, contents);
   if (colors && colors.length > 0) {
-    $("#file-input").remove();
     $("#waifu-container").append(hori);
 
     background = colors[17];
     foreground = colors[16];
-    $("body").css("background-color", background);
+    $("#waifu").css("background-color", background);
 
     for (var i = 0; i <= 15; i++) {
       color = colors[i];
@@ -16,6 +15,12 @@ function display(format, contents) {
       $(region).css("fill", color);
     }
     $(".words").css("fill", foreground);
+
+    var serializer = new XMLSerializer();
+    var svg = $("#waifu").get(0);
+    var string = serializer.serializeToString(svg);
+    var encoded = window.btoa(string);
+    window.location.replace("data:image/svg+xml;base64," + encoded);
   } else {
     $("#error").fadeIn(300);
   }
