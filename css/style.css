@@ -55,6 +55,12 @@ h1 {
 #waifu-container {
   display: none;
 }
+
+#logo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
 @media screen and (min-width: 1000px) {
   body {
     margin-left: 25vw;
