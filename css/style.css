@@ -56,17 +56,12 @@ h1 {
   display: none;
 }
 
-#logo {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-}
 .footer {
   line-height: 0.1em;
   text-align: right;
   background-color: #1e1f2a;
   width: 100vw;
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 0;
 }
