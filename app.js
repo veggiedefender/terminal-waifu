@@ -1,8 +1,18 @@
 contents_id = $("#contents");
 
+contents = localStorage.getItem("contents");
+if (contents != null) {
+  console.log("loaded contents from localStorage");
+  format = localStorage.getItem("format");
+  console.log("loaded format from localStorage");
+  $("format").val(format);
+  contents_id.val(contents);
+}
+
 function display(format, contents) {
   colors = getColors(format, contents);
   if (colors && colors.length > 0) {
+    localStorage.setItem("contents", contents);
     $("#waifu-container").append(hori);
 
     background = colors[17];
