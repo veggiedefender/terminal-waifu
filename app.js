@@ -73,7 +73,7 @@ function autodetect(contents) {
   if (contents.contains("<key>")) {
     return "iterm";
   }
-  if (contents.contains("{")) {
+  if (contents[0] == "{") {
     return "json";
   }
   if (contents.contains("[colors]")) {
