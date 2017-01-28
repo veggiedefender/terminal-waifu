@@ -61,6 +61,21 @@ h1 {
   right: 0;
   bottom: 0;
 }
+.footer {
+  line-height: 0.1em;
+  text-align: right;
+  background-color: #1e1f2a;
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.footer-text {
+  padding-right: 1ch;
+}
+.footer-text a {
+  color: white;
+}
 @media screen and (min-width: 1000px) {
   body {
     margin-left: 25vw;
