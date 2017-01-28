@@ -29,7 +29,6 @@ select {
   background-color: #282a2e;
   border: 1px solid #373b41;
   font-family: inherit;
-  margin-bottom: 0;
 } select:focus {
   border: 1px solid #eff0eb;
 }
@@ -38,20 +37,20 @@ select {
   border-color: #5af78e;
   color: #282a2e;
   background-color: #5af78e;
-  margin-bottom: 0;
 } #submit:hover {
   background-color: #68ff9a;
 }
 
 #reset {
   color: #eff0eb;
-  margin-bottom: 0;
+  margin-bottom: 1rem;
 }
 
 #error {
   background-color: #ff5c57;
   padding-left: 1ch;
   border-radius: 3px;
+  margin-top: -2rem;
   display: none;
 }
 
